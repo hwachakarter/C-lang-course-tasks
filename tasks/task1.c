@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <math.h>
+#include <stdio.h> // для ввода-вывода
+#include <math.h> // для математических функций
 
 int main() {
     // Объявление переменных
@@ -7,6 +7,7 @@ int main() {
     double a, b;        // Результаты
 
     // Ввод значений x, y, z
+    printf("Для решения арифметических выражений (см. README)\n");
     printf("Введите значения x, y, z: ");
     scanf("%lf %lf %lf", &x, &y, &z);
 
