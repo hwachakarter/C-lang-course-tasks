@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <math.h>
+#include <stdio.h> // для ввода-вывода
+#include <math.h> // для математических функций
 
 int main() {
     double a;

@@ -83,10 +83,15 @@ void solve() {
 
 int main() {
     // Проверка 
-    // assert(max_num_by_pattern(3, (float[N][N])
-    // {{1.0f, 2.0f, 3.0f}, 
-    // {4.0f, 5.0f, 6.0f}, 
-    // {7.0f, 8.0f, 9.0f}}) == 5.0f);
+    float matrix_test[N][N];
+    float test_num = 1.0f;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            matrix_test[i][j] = test_num;
+            test_num++;
+        }
+    }
+    assert(max_num_by_pattern(3, matrix_test));
     
     solve();
     return 0;

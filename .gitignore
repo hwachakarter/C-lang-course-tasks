@@ -55,7 +55,7 @@ dkms.conf
 .vscode/
 .vscode-test/
 
-# mac stuff
+# Mac stuff
 .DS_Store
 .AppleDouble
 .LSOverride
