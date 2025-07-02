@@ -34,13 +34,17 @@ int main() {
 
     // выполнение задачи
     for (unsigned int i = 0; i < n; i++) {
-        for (unsigned int current = 0; current < n; current++) {
-            // если числа равны с точностью до 0.001
-            if (i != current && fabs(a[i] - a[current]) < 0.001f) { 
-                break; // выход, так как нашли повторение
+        int is_unique = 1; // флаг для проверки уникальности числа
+        for (unsigned int j = 0; j < i; j++) {
+            if (a[i] == a[j]) {
+                is_unique = 0; // число не уникально
+                counter--;
+                break;
             }
         }
-    counter++;
+        if (is_unique) {
+            counter++;
+        }
     }
 
 

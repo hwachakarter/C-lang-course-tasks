@@ -1,15 +1,6 @@
 #include <stdio.h> // для ввода-вывода
 #include <assert.h> // для assert
-
-// Рекурсивная функция для вычисления числа Фибоначчи
-int fib(int n) {
-    if (n == 0)
-        return 0;
-    else if (n == 1)
-        return 1;
-    else
-        return fib(n - 1) + fib(n - 2);
-}
+#include "../modules/fib.h" 
 
 // Процедура ввода и вывода числа Фибоначчи
 void solve() {
