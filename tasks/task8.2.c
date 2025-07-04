@@ -15,8 +15,8 @@ int main() {
         return 1;
     }
 
-    int** matrix = generate_random_matrix(n, -10, 10); // Генерация случайной матрицы
-    int* vector_b = (int*)malloc(n * sizeof(int)); // Выделение памяти для вектора b
+    float** matrix = generate_random_matrix(n, -10, 10); // Генерация случайной матрицы
+    float* vector_b = (float*)malloc(n * sizeof(float)); // Выделение памяти для вектора b
 
     // Заполнение вектора b случайными числами
     for (int i = 0; i < n; i++) {
@@ -27,7 +27,7 @@ int main() {
     print_matrix(n, matrix);
     printf("Вектор b: ");
     for (int i = 0; i < n; i++) {
-        printf("%d ", vector_b[i]);
+        printf("%.2f ", vector_b[i]);
     }
     printf("\n");
 
@@ -38,24 +38,26 @@ int main() {
     */
 
     // Вычисляем A^2 = A * A
-    int** matrix_squared;
+    float** matrix_squared;
     // Выделение памяти для матрицы A^2
-    matrix_squared = (int**)malloc(n * sizeof(int*));
+    matrix_squared = (float**)malloc(n * sizeof(float*));
+    float temp; // переменная для счёта
     for (int i = 0; i < n; i++) {
-        // Выделение памяти для каждой строки матрицы A^2
-        matrix_squared[i] = (int*)malloc(n * sizeof(int));
+        // выделение памяти для строк
+        matrix_squared[i] = (float*)malloc(n * sizeof(float));
         for (int j = 0; j < n; j++) {
+            temp = 0.0f; // обнуляем результат
             for (int k = 0; k < n; k++) {
-                // Умножение матрицы A на саму себя
-                matrix_squared[i][j] = matrix[i][k] * matrix[k][j];
+                temp += matrix[i][k] * matrix[k][j];
             }
+            matrix_squared[i][j] = temp;
         }
     }
 
     // Вычисляем результат: (A^2) * b
-    int* result_vector;
+    float* result_vector;
     // Выделение памяти
-    result_vector = (int*)malloc(n * sizeof(int));
+    result_vector = (float*)malloc(n * sizeof(float));
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             // Умножение строки матрицы A^2 на вектор b
@@ -68,7 +70,7 @@ int main() {
     // Выводим результат
     printf("Вектор A^2*b: ");
     for (int i = 0; i < n; i++) {
-        printf("%d ", result_vector[i]);
+        printf("%.2f ", result_vector[i]);
     }
     printf("\n");
 

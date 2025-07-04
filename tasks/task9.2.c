@@ -21,22 +21,22 @@ void solve() {
     printf("Введите минимум и максимум для генерации случайных чисел: ");
     scanf("%d %d", &min, &max);
 
-    int** matrix = generate_random_matrix(n, min, max);
+    float** matrix = generate_random_matrix(n, min, max);
 
     // Вывод сгенерированной матрицы
     print_matrix(n, matrix);
 
     // Поиск максимального числа по заданному шаблону
-    int max_value = max_num_by_pattern(n, matrix);
-    printf("Максимальное число по шаблону: %d\n", max_value);
+    float max_value = max_num_by_pattern(n, matrix);
+    printf("Максимальное число по шаблону: %.2f\n", max_value);
 }
 
 int main() {  
     assert(max_num_by_pattern(3, 
-        (int*[]) { 
-            (int[]){1, 2, 3}, 
-            (int[]){4, 5, 6}, 
-            (int[]){7, 8, 9} 
+        (float*[]) { 
+            (float[]){1, 2, 3}, 
+            (float[]){4, 5, 6}, 
+            (float[]){7, 8, 9} 
         }) == 5); // Проверка для 3x3 матрицы
 
     solve();

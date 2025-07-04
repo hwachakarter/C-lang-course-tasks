@@ -14,7 +14,7 @@
 // n - размерность матрицы (количество строк и столбцов);
 // min - минимальное значение для генерации случайных чисел;
 // max - максимальное значение для генерации случайных чисел.
-int** generate_random_matrix(int n, int min, int max);
+float** generate_random_matrix(int n, int min, int max);
 
 // Функция для поиска максимального числа в определённом диапазоне
 // диапозон:
@@ -24,10 +24,10 @@ int** generate_random_matrix(int n, int min, int max);
 // Параметры:
 // n - размерность матрицы;
 // matrix - указатель на матрицу (двумерный массив).
-int max_num_by_pattern(int n, int** matrix);
+float max_num_by_pattern(int n, float** matrix);
 
 // Функция для вывода матрицы n x n на экран
 // Параметры:
 // n - размерность матрицы;
 // matrix - указатель на матрицу (двумерный массив).
-void print_matrix(int n, int** matrix);
+void print_matrix(int n, float** matrix);

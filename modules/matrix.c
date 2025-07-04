@@ -6,19 +6,19 @@
 // Функция для генерации случайной матрицы n x n
 // Выделяет память для двумерного массива (матрицы) размером n x n.
 // malloc - функция для выделения блока памяти заданного размера в байтах.
-// sizeof(int*) - вычисляет размер одного указателя на int (для строк матрицы).
-// sizeof(int) - вычисляет размер одного элемента int (для столбцов матрицы).
+// sizeof(float*) - вычисляет размер одного указателя на float (для строк матрицы).
+// sizeof(float) - вычисляет размер одного элемента float (для столбцов матрицы).
 // Возвращает указатель на выделенную матрицу или NULL при ошибке выделения памяти.
 // Параметры:
 // n - размерность матрицы (количество строк и столбцов);
 // min - минимальное значение для генерации случайных чисел;
 // max - максимальное значение для генерации случайных чисел.
-int** generate_random_matrix(int n, int min, int max) {
+float** generate_random_matrix(int n, int min, int max) {
     // выделение памяти для массива указателей на строки матрицы (n строк)
-    int** matrix = (int**)malloc(n * sizeof(int*));
+    float** matrix = (float**)malloc(n * sizeof(float*));
     for (int i = 0; i < n; i++) {
-        // выделение памяти под n элементов типа int для каждой строки матрицы 
-        matrix[i] = (int*)malloc(n * sizeof(int));
+        // выделение памяти под n элементов типа float для каждой строки матрицы 
+        matrix[i] = (float*)malloc(n * sizeof(float));
         // заполнение кажлой строки матрицы случайными числами от min до max включительно
         for (int j = 0; j < n; j++) {
             matrix[i][j] = min + rand() % (max - min + 1);
@@ -35,9 +35,9 @@ int** generate_random_matrix(int n, int min, int max) {
 // Параметры:
 // n - размерность матрицы;
 // matrix - указатель на матрицу (двумерный массив).
-int max_num_by_pattern(int n, int** matrix) {
-    int max_num = matrix[0][0]; // инициализация первым элементом
-    int row = 0;
+float max_num_by_pattern(int n, float** matrix) {
+    float max_num = matrix[0][0]; // инициализация первым элементом
+    float row = 0;
 
     for (int i = 0; i < n; i++) {
         for (int j = row; j < n - row; j++) {
@@ -55,10 +55,10 @@ int max_num_by_pattern(int n, int** matrix) {
 // Параметры:
 // n - размерность матрицы;
 // matrix - указатель на матрицу (двумерный массив).
-void print_matrix(int n, int** matrix) {
+void print_matrix(int n, float** matrix) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            printf("%d ", matrix[i][j]);
+            printf("%.2f ", matrix[i][j]);
         }
         printf("\n");
     }
