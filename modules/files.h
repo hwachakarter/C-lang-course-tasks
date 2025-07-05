@@ -1,9 +1,19 @@
 #include <stdio.h>
-#include "lists.h"
+#include <math.h>
+#include <string.h>
 
-// возвращает float список из файла file_path
-Node * parse_float_f_to_list(char file_path[]);
+// Функция для записи строки в файл
+// string - строка, которую нужно записать
+// file_path - путь к файлу, в который нужно записать строку
+void string_to_file(char string[], char file_path[]);
 
-// Функция для записи float списка в файл
-// Возвращает 0 при успешной записи, 1 при ошибке открытия файла
-int write_float_list_to_f(Node * list, char file_path[]);
+// Функция для поиска совершенных квадратов в файле
+// input_file - входной файл, в котором нужно искать совершенные квадраты
+// output_file - выходной файл, в который нужно записать найденные совершенные квадраты
+// Возвращает 0, если прошло успешно, 1 - если файл не найден
+int parse_for_perfect_squares(char input_file[], char output_file[]);
+
+// Функция для поиска однофамильцев
+// Возвращает 0, если однофамильцы найдены, 1 - если не найдены
+// или файл не найден
+int find_same_surname(char input_file[]);

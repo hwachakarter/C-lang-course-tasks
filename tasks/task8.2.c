@@ -57,7 +57,8 @@ int main() {
     // Вычисляем результат: (A^2) * b
     float* result_vector;
     // Выделение памяти
-    result_vector = (float*)malloc(n * sizeof(float));
+    // result_vector = (float*)malloc(n * sizeof(float));
+    result_vector = malloc(n * sizeof(float));
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             // Умножение строки матрицы A^2 на вектор b
