@@ -52,7 +52,7 @@ int find_same_surname(char input_file[]) {
     while (!feof(input)) {
         pos2 = 0; // сбрасывает позицию во втором файле
         fscanf(input, "%s %s %s", name, surname, class_name);
-        fseek(input2, 0, SEEK_SET); // сбрасывает указатель на начало файла
+        fseek(input2, 0, SEEK_SET); // сбрасывает указатель на начало второго файла
         char name2[256], surname2[256], class_name2[256];
         while (!feof(input2)) {
             fscanf(input2, "%s %s %s", name2, surname2, class_name2);

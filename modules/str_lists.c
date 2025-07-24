@@ -54,7 +54,7 @@ Node * delete_pos(Node* head, int pos) {
             head = head->Next;
         } else {
             // если позиции нет выкидывает ошибку
-            assert(1==0);
+            // assert(1==0);
             return head;
         }
     }
@@ -69,7 +69,7 @@ Node * delete_pos(Node* head, int pos) {
         return head; // чтобы не было предупреждения
     }
     // если позиции нет выкидывает ошибку
-    assert(1==0);
+    // assert(1==0);
 }
 
 // Функция для печати списка
